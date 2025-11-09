@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+---
+
+<Layout>
+
+  <!-- 1. Hero / presentación -->
+<header class="header">
+  <div class="contenedor contenido-header">
+    <h1>Easily Software</h1>
+    
+    <button class="hamburger" id="hamburger">
+      ☰
+    </button>
+    <nav class="nav-principal" id="nav">
+      <a href="#about">About Us</a>
+      <a href="#products">Our Products</a>
+	  <a href="#demo">Team Meeting</a>
+	  <a href="#team">Our Team</a>
+    </nav>
+  </div>
+</header>
+
+  <!-- 2. Sobre la empresa -->
+  <section id="about" class="contenedor about">
+    <h2>About Us</h2>
+    <p>We are a team of passionate developers dedicated to delivering high-quality software solutions.</p>
+	<img src="/images/about-us.jpg" alt="About Us Image" />
+  </section>
+
+  <!-- 3. Productos -->
+  <section id="products" class="contenedor products">
+    <h2>Our Products</h2>
+    <div class="products-grid">
+      <!-- Cards de productos -->
+			  <div class="product-card">
+		<img src="/images/product1.jpg" alt="Product 1" />
+		<h3>Product 1</h3>
+		<p>A brief description of Product 1.</p>
+    </div>
+  </section>
+
+  <!-- 4. Video demo -->
+  <section id="demo" class="contenedor demo">
+    <h2>Team meeting</h2>
+    <video controls>
+      <source src="/video/demo.mp4" type="video/mp4" />
+      Your browser does not support the video.
+    </video>
+  </section>
+
+  <!-- 5. Equipo -->
+  <section id="team" class="contenedor team">
+    <h2>Our Team</h2>
+    <div class="team-grid">
+      <!-- Miembros con foto, nombre y CV -->
+    </div>
+  </section>
+
+</Layout>

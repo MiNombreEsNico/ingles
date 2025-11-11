@@ -4,7 +4,9 @@ html {
     font-size: 62.5%;
     box-sizing: border-box;
     scroll-padding-top: 0rem;
+    scroll-behavior: smooth;
 }
+
 *, 
 *:before,
 *:after {
@@ -64,4 +66,10 @@ body > section {
   ol {
     list-style: none;
   }
+}
+
+.img_logo {
+    width: 12rem;
+    height: auto;
+    margin-bottom: 2rem;
 }

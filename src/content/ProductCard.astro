@@ -1,0 +1,10 @@
+---
+const { title, description, logo, image, link } = Astro.props;
+---
+<div class="contenedor contenedor-cards">
+    <div class="card">
+      <img class="img_logo" src={logo} alt="">
+      <p>{description}</p>
+      <a href={link} class="btn-lila">More info</a>
+    </div>
+</div>

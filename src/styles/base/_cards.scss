@@ -1,112 +1,138 @@
 @use 'variables' as v;
 @use 'mixins' as m;
 
-// Tarjeta base
 .card {
-    background: v.$blanco;
-    border-radius: v.$border-radius;
-    box-shadow: v.$sombra-card;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: v.$blanco;
+  width: 30rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  @include m.tablet {
+    width: 30rem;
     padding: 2rem;
-    margin-bottom: 2rem;
-    border: v.$borde-principal;
-    transition: transform v.$transicion-rapida, box-shadow v.$transicion-rapida;
+  }
 
-    &:hover {
-        transform: translateY(-2px);
-        box-shadow: v.$sombra-hover;
-    }
+  @include m.desktop {
+    width: 60rem;
+  }
 
-    &--small {
-        padding: 1.5rem;
-        border-radius: v.$border-radius-small;
-    }
+  &:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0.6rem 1.4rem rgba(0, 0, 0, 0.15);
+  }
 
-    &--large {
-        padding: 3rem;
-        border-radius: v.$border-radius-large;
-    }
+  img {
+    width: 14rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
 
-    &--primary {
-        border-left: 5px solid v.$lila-easily;
-    }
+  h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
 
-    &--success {
-        border-left: 5px solid v.$verde;
-    }
+  p {
+    font-size: 2rem;
+    color: #555;
+    margin-bottom: 1rem;
+  }
 
-    &--danger {
-        border-left: 5px solid v.$rojo;
-    }
+  span {
+    font-weight: bold;
+    color: #2a7ae2;
+  }
+}
+.card_member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: v.$blanco;
+  width: 20rem;
+  border-radius: 1rem;
+  box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-    &--warning {
-        border-left: 5px solid v.$amarillo;
-    }
+  @include m.tablet {
+    width: 30rem;
+    padding: 2rem;
+  }
+
+  @include m.desktop {
+    width: 40rem;
+  }
+
+  &:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 0.6rem 1.4rem rgba(0, 0, 0, 0.15);
+  }
+
+  img {
+    width: 14rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 2rem;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+
+  span {
+    font-weight: bold;
+    color: #2a7ae2;
+  }
 }
 
-// materias/cursos
-.materia-card {
-    @extend .card;
-    @extend .card--primary;
-    
-    &:hover {
-        transform: scale(1.02);
-    }
-}
-
-// para exámenes  
-.examen-card {
-    @extend .card;
-    background-color: v.$color-card;
-    
-    h3 {
-        margin: 0 0 1rem 0;
-        font-size: 1.3rem;
-        color: v.$lila-easily;
-    }
-
-    p {
-        margin: 0.5rem 0;
-        color: v.$color-texto;
-    }
-}
-
-//perfil de usuario
-.profile-card {
-    @extend .card;
-    text-align: center;
-    
-    .profile-image {
-        width: 120px;
-        height: 120px;
-        border-radius: v.$border-radius-circle;
-        object-fit: cover;
-        border: 3px solid v.$lila-easily;
-        margin: 0 auto 2rem auto;
-        display: block;
-    }
-
-    .profile-name {
-        margin: 0 0 1rem 0;
-        font-size: 2rem;
-        color: v.$color-texto;
-    }
-
-    .profile-info {
-        margin: 0.5rem 0;
-        font-size: 1.4rem;
-        color: v.$gris-oscuro;
-    }
-}
-
-// Grid responsivo
-.cards-grid {
+.contenedor-cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  flex-direction: column;
+  
+  @include m.tablet {
     display: grid;
-    gap: 1.5rem;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    padding: 1rem;
-
-    @include m.tablet {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 2rem;
-    }
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+  @include m.desktop {
+    gap: 4rem;
+  }
+}
+.contenedor-cards_members {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  flex-direction: column;
+  
+  @include m.tablet {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+  @include m.desktop {
+    gap: 4rem;
+  }
 }

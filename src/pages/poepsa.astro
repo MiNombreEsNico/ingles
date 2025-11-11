@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Poepsa | Easily Software">
+
+  <!-- 1. Hero / presentación -->
+<header class="header">
+  <div class="contenedor contenido-header">
+    <h1>Easily Software</h1>
+  </div>
+</header>
+
+  <!-- 4. Video demo -->
+  <section id="demo" class="contenedor demo sobre-easily">
+    <div class="contenido-home">
+      <h2>Poepsa</h2>
+      <p>Poepsa is a management platform designed for beverage distributors. It helps businesses organize their sales, inventory, and deliveries efficiently, offering real-time tracking and tools that simplify daily operations.</p>
+    </div>
+    <div class="imagen-home">
+      <video autoplay muted loop class="video-ingles">
+        <source src="/video/poepsa.webm" type="video/mp4" />
+        Your browser does not support the video.
+      </video>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("nav");
+
+    if (hamburger && nav) {
+      hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+    }
+  });
+</script>

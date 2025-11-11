@@ -12,7 +12,7 @@ import "../styles/app.scss"; // 👈 importás tu Sass compilado
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Pacifico&display=swap" rel="stylesheet">
 		<meta name="generator" content={Astro.generator} />
-		<title>Easily - Homepage</title>
+		<title>{Astro.props.title}</title>
 	</head>
 	<body>
 		<slot />

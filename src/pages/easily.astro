@@ -1,0 +1,41 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Easily | Easily Software">
+
+  <!-- 1. Hero / presentación -->
+<header class="header">
+  <div class="contenedor contenido-header">
+    <h1>Easily Software</h1>
+  </div>
+</header>
+
+  <!-- 4. Video demo -->
+  <section id="demo" class="contenedor demo sobre-easily">
+    <div class="contenido-home">
+      <h2>Easily</h2>
+      <p>Easily is an online educational platform that connects teachers and students through interactive virtual classes, organized study materials, and real-time communication tools. It’s designed to make online learning simple, engaging, and accessible for everyone.</p>
+    </div>
+    <div class="imagen-home">
+      <video autoplay muted loop class="video-ingles">
+        <source src="/video/easily.webm" type="video/mp4" />
+        Your browser does not support the video.
+      </video>
+    </div>
+  </section>
+
+</Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("nav");
+
+    if (hamburger && nav) {
+      hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+    }
+  });
+</script>

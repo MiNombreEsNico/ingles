@@ -1,9 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ProductCard from '../content/ProductCard.astro';
+import MemberCard from '../content/MemberCard.astro';
+import { products } from '../data/products.js';
+import { member } from '../data/member.js';
 
 ---
 
-<Layout>
+<Layout title="Easily Software">
 
   <!-- 1. Hero / presentación -->
 <header class="header">
@@ -23,39 +27,74 @@ import Layout from '../layouts/Layout.astro';
 </header>
 
   <!-- 2. Sobre la empresa -->
-  <section id="about" class="contenedor about">
-    <h2>About Us</h2>
-    <p>We are a team of passionate developers dedicated to delivering high-quality software solutions.</p>
-	<img src="/images/about-us.jpg" alt="About Us Image" />
+  <section id="about" class="contenedor about sobre-easily">
+    <div class="imagen-home">
+      <img src="/img/img_home.avif" alt="About Us Image" />
+    </div>
+    <div class="contenido-home">
+      <h2>About Us</h2>
+      <p>We are a team of passionate developers dedicated to delivering high-quality software solutions.</p>
+    </div>
   </section>
 
   <!-- 3. Productos -->
-  <section id="products" class="contenedor products">
+  <section id="products" class="contenedor">
     <h2>Our Products</h2>
-    <div class="products-grid">
-      <!-- Cards de productos -->
-			  <div class="product-card">
-		<img src="/images/product1.jpg" alt="Product 1" />
-		<h3>Product 1</h3>
-		<p>A brief description of Product 1.</p>
+      <div class="contenedor-cards">
+        {products.map(product => (
+          <ProductCard 
+            title={product.title} 
+            description={product.description} 
+            logo={product.logo} 
+            image={product.image} 
+            link={product.link}
+          />
+        ))}
     </div>
   </section>
 
   <!-- 4. Video demo -->
-  <section id="demo" class="contenedor demo">
-    <h2>Team meeting</h2>
-    <video controls>
-      <source src="/video/demo.mp4" type="video/mp4" />
-      Your browser does not support the video.
-    </video>
+  <section id="demo" class="contenedor demo sobre-easily">
+    <div class="contenido-home">
+      <h2>Team meeting</h2>
+      <p>This is one of our team meetings. Here you can see the great work environment we have at Easily Software and the camaraderie that characterizes us.</p>
+    </div>
+    <div class="imagen-home">
+      <video controls loop class="video-ingles">
+        <source src="/video/demo.webm" type="video/mp4" />
+        Your browser does not support the video.
+      </video>
+    </div>
   </section>
 
   <!-- 5. Equipo -->
   <section id="team" class="contenedor team">
     <h2>Our Team</h2>
     <div class="team-grid">
-      <!-- Miembros con foto, nombre y CV -->
+            <div class="contenedor-cards_members">
+        {member.map(member => (
+          <MemberCard 
+            name={member.name} 
+            image={member.image} 
+            description={member.description}
+            cv={member.cv}
+          />
+        ))}
+    </div>
     </div>
   </section>
 
 </Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("nav");
+
+    if (hamburger && nav) {
+      hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+      });
+    }
+  });
+</script>

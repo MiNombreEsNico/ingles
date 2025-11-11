@@ -1,0 +1,11 @@
+---
+const { name, description, cv, image } = Astro.props;
+---
+<div class="contenedor contenedor-cards_members">
+    <div class="card_member">
+      <h3>{name}</h3>
+      <img class="img_logo" src={image} alt="Member Profile Picture">
+      <p>{description}</p>
+      <a href={cv} class="btn-lila">Download CV</a>
+    </div>
+</div>
